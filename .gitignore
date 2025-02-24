@@ -1,0 +1,52 @@
+# Ignore Visual Studio specific files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore build outputs
+bin/
+obj/
+out/
+app.publish/
+PublishProfiles/
+
+# Ignore NuGet packages
+*.nupkg
+packages/
+.nuget/
+project.lock.json
+project.assets.json
+global.json
+
+# Ignore build artifacts
+*.dll
+*.exe
+*.log
+*.cache
+*.pdb
+*.ilk
+*.obj
+*.o
+*.idb
+
+# Ignore Rider / JetBrains specific files
+.idea/
+*.sln.iml
+
+# Ignore MacOS specific files
+.DS_Store
+
+# Ignore logs and user-generated files
+logs/
+*.log
+*.tlog
+*.csv
+*.psess
+*.vsp
+
+# Ignore .NET-specific settings
+.env
+.env.local
+secrets.json
