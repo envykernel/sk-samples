@@ -1,0 +1,135 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Open Weather API",
+      "description": "API to fetch weather details for a given city.",
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "https://open-weather13.p.rapidapi.com"
+      }
+    ],
+    "paths": {
+      "/city/{city}/{language}": {
+        "get": {
+          "summary": "Get weather data for a city",
+          "description": "Fetches the current weather for a specified city and language.",
+          "parameters": [
+            {
+              "name": "city",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              },
+              "example": "landon"
+            },
+            {
+              "name": "language",
+              "in": "path",
+              "required": true,
+              "schema": {
+                "type": "string"
+              },
+              "example": "EN"
+            },
+            {
+              "name": "x-rapidapi-host",
+              "in": "header",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "example": "open-weather13.p.rapidapi.com"
+              }
+            },
+            {
+              "name": "x-rapidapi-key",
+              "in": "header",
+              "required": true,
+              "schema": {
+                "type": "string",
+                "example": "your-api-key-here"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Successful response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "coord": {
+                        "type": "object",
+                        "properties": {
+                          "lon": { "type": "number", "example": -89.1028 },
+                          "lat": { "type": "number", "example": 30.438 }
+                        }
+                      },
+                      "weather": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": { "type": "integer", "example": 800 },
+                            "main": { "type": "string", "example": "Clear" },
+                            "description": { "type": "string", "example": "ciel dégagé" },
+                            "icon": { "type": "string", "example": "01d" }
+                          }
+                        }
+                      },
+                      "base": { "type": "string", "example": "stations" },
+                      "main": {
+                        "type": "object",
+                        "properties": {
+                          "temp": { "type": "number", "example": 73.15 },
+                          "feels_like": { "type": "number", "example": 71.94 },
+                          "temp_min": { "type": "number", "example": 68.95 },
+                          "temp_max": { "type": "number", "example": 73.4 },
+                          "pressure": { "type": "integer", "example": 1014 },
+                          "humidity": { "type": "integer", "example": 38 },
+                          "sea_level": { "type": "integer", "example": 1014 },
+                          "grnd_level": { "type": "integer", "example": 1012 }
+                        }
+                      },
+                      "visibility": { "type": "integer", "example": 10000 },
+                      "wind": {
+                        "type": "object",
+                        "properties": {
+                          "speed": { "type": "number", "example": 12.66 },
+                          "deg": { "type": "integer", "example": 220 }
+                        }
+                      },
+                      "clouds": {
+                        "type": "object",
+                        "properties": {
+                          "all": { "type": "integer", "example": 0 }
+                        }
+                      },
+                      "dt": { "type": "integer", "example": 1740868284 },
+                      "sys": {
+                        "type": "object",
+                        "properties": {
+                          "type": { "type": "integer", "example": 2 },
+                          "id": { "type": "integer", "example": 2015175 },
+                          "country": { "type": "string", "example": "US" },
+                          "sunrise": { "type": "integer", "example": 1740831752 },
+                          "sunset": { "type": "integer", "example": 1740873312 }
+                        }
+                      },
+                      "timezone": { "type": "integer", "example": -21600 },
+                      "id": { "type": "integer", "example": 4429197 },
+                      "name": { "type": "string", "example": "Landon" },
+                      "cod": { "type": "integer", "example": 200 }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

@@ -5,13 +5,11 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <NoWarn>SKEXP0050,SKEXP0001,CS0618</NoWarn>
-  
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Azure.Identity" Version="1.13.2" />
     <PackageReference Include="Microsoft.SemanticKernel" Version="1.38.0" />
-    <PackageReference Include="Microsoft.SemanticKernel.Plugins.Web" Version="1.38.0-alpha" />
     <PackageReference Include="Microsoft.SemanticKernel.PromptTemplates.Handlebars" Version="1.38.0" />
   </ItemGroup>
 
